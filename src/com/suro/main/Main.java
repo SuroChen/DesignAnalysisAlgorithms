@@ -4,11 +4,11 @@ import com.suro.sort.Sort;
 
 public class Main {
     public static void main(String[] args) {
-        int[] A = {5, 1, 9, 4, 6, 2, 0, 3, 8, 7};
+        int[] a = {5, 1, 9, 4, 6, 2, 0, 3, 8, 7};
         int i;
-        Sort.insertionSort(A);
-        for (i = 0; i < 10; i++)
-            System.out.print(A[i] + " ");
+        Sort.bubbleSort(a);
+        for (i = 0; i < a.length; i++)
+            System.out.print(a[i] + " ");
         System.out.println();
     }
 }
