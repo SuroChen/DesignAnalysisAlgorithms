@@ -27,4 +27,14 @@ public class LinearList {
             }
         }
     }
+
+    public static int search(int[] a, int v) {
+        int n = a.length, i = 0;
+        while (i < n && a[i] != v) {
+            i++;
+        }
+        if (i >= n)
+            return -1;
+        return i;
+    }
 }
