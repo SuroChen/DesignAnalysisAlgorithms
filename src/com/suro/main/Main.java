@@ -1,15 +1,23 @@
 package com.suro.main;
 
 import com.suro.sort.Sort;
+import com.suro.utility.LinearList;
 
 public class Main {
     public static void main(String[] args) {
-        int[] a = {5, 1, 9, 4, 6, 2, 0, 3, 8, 7};
         int i;
-        int count = Sort.getTheInvertion(a);
-//        for (i = 0; i < a.length; i++)
-//            System.out.print(a[i] + " ");
-        System.out.print(count);
+        Integer[] a = {1, 2, 5, 8, 9, 0, 3, 4, 6, 7};
+        String[] b = {"AoMen", "BeiJing", "ShangHai", "ChongQing", "TianJin", "XiangGang"};
+        Double[] c = {0.5, 3.7, 6.3, 8.5, 9.2, 1.7, 2.3, 4.1, 5.9, 7.4};
+        LinearList.merge(a, 0, 4, a.length - 1);
+        for (i = 0; i < a.length; i++) {
+            System.out.print(a[i] + " ");
+        }
+        System.out.println();
+        LinearList.merge(b, 0, 2, b.length - 1);
+        for (i = 0; i < b.length; i++) {
+            System.out.print(b[i] + " ");
+        }
         System.out.println();
     }
 }
