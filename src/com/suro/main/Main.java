@@ -5,6 +5,7 @@ import com.suro.utility.LinearList;
 
 public class Main {
     public static void main(String[] args) {
+        //测试GitHub
         int i;
         int[] a = {1, 2, 5, 8, 9, 0, 3, 4, 6, 7};
 //        String[] b = {"AoMen", "BeiJing", "ShangHai", "ChongQing", "TianJin", "XiangGang"};
