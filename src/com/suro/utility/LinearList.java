@@ -1,6 +1,9 @@
 package com.suro.utility;
 
 import java.util.Arrays;
+import java.util.Collections;
+import java.util.Comparator;
+import java.util.List;
 
 public class LinearList {
     public static void merge(Comparable[] a, int p, int q, int r) {
@@ -36,5 +39,20 @@ public class LinearList {
         if (i >= n)
             return -1;
         return i;
+    }
+
+    public static int partition(List<Comparable> a, int p, int r, Comparator comp) {
+        Comparable x;
+        int i, j;
+        x = a.get(r);
+        i = p - 1;
+        for (j = p; j < r; j++) {
+            if (comp.compare(a.get(j), x) <= 0) {
+                i++;
+                Collections.swap(a, i, j);
+            }
+        }
+        Collections.swap(a, i + 1, r);
+        return i + 1;
     }
 }
