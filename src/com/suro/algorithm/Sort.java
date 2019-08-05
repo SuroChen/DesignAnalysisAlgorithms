@@ -1,4 +1,4 @@
-package com.suro.sort;
+package com.suro.algorithm;
 
 public class Sort {
     public static void insertionSort(int[] a) {
