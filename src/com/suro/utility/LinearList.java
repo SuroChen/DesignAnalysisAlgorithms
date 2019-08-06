@@ -31,6 +31,37 @@ public class LinearList {
         }
     }
 
+    public static void merge(List<Comparable> a, int p, int q, int r, Comparator comp) {
+        int i, j, k, n1 = q - p + 1, n2 = r - q;
+        Comparable[] L = new Comparable[n1];
+        Comparable[] R = new Comparable[n2];
+        for (i = 0; i < n1; i++) {
+            L[i] = a.get(p + i);
+        }
+        for (j = 0; j < n2; j++) {
+            R[j] = a.get(q + 1 + j);
+        }
+        i = j = 0;
+        k = p;
+        while (i < n1 && j < n2) {
+            if (comp.compare(L[i], R[j]) < 0) {
+                a.set(k++, L[i++]);
+            } else {
+                a.set(k++, R[j++]);
+            }
+        }
+        if (i < n1) {
+            for (; i < n1; i++) {
+                a.set(k++, L[i]);
+            }
+        }
+        if (j < n2) {
+            for (; j < n2; j++) {
+                a.set(k++, R[j]);
+            }
+        }
+    }
+
     public static int search(int[] a, int v) {
         int n = a.length, i = 0;
         while (i < n && a[i] != v) {

@@ -1,5 +1,10 @@
 package com.suro.algorithm;
 
+import com.suro.utility.LinearList;
+
+import java.util.Comparator;
+import java.util.List;
+
 public class Sort {
     public static void insertionSort(int[] a) {
         int i, j, key, n = a.length;
@@ -39,6 +44,15 @@ public class Sort {
                     a[j - 1] = key;
                 }
             }
+        }
+    }
+
+    public static void mergeSort(List<Comparable> a, int p, int r, Comparator comp) {
+        if (p < r) {
+            int q = (p + r) / 2;
+            mergeSort(a, p, q, comp);
+            mergeSort(a, q + 1, r, comp);
+            LinearList.merge(a, p, q, r, comp);
         }
     }
 }
