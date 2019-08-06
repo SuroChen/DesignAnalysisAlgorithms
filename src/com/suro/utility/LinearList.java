@@ -72,6 +72,21 @@ public class LinearList {
         return i;
     }
 
+    public static int binerySearch(int[] a, int p, int r, int v) {
+        if (p > r) {
+            return -1;
+        }
+        int q = (p + r) / 2;
+        if (a[q] == v) {
+            return q;
+        }
+        if (v < a[q]) {
+            return binerySearch(a, p, q - 1, v);
+        } else {
+            return binerySearch(a, q + 1, r, v);
+        }
+    }
+
     public static int partition(List<Comparable> a, int p, int r, Comparator comp) {
         Comparable x;
         int i, j;
