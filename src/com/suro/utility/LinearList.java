@@ -101,4 +101,10 @@ public class LinearList {
         Collections.swap(a, i + 1, r);
         return i + 1;
     }
+
+    public static int randmizedPartition(List<Comparable> a, int p, int r, Comparator comp) {
+        int i = p + (int) ((double) (r - p) * Math.random());
+        Collections.swap(a, i, r);
+        return partition(a, p, r, comp);
+    }
 }

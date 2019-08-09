@@ -55,4 +55,12 @@ public class Sort {
             LinearList.merge(a, p, q, r, comp);
         }
     }
+
+    public static void quickSort(List<Comparable> a, int p, int r, Comparator comp) {
+        if (p < r) {
+            int q = LinearList.randmizedPartition(a, p, r, comp);
+            quickSort(a, p, q, comp);
+            quickSort(a, q + 1, r, comp);
+        }
+    }
 }
