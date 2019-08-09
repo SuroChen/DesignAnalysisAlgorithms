@@ -107,4 +107,18 @@ public class LinearList {
         Collections.swap(a, i, r);
         return partition(a, p, r, comp);
     }
+
+    public static int select(List<Comparable> a, int p, int r, int i, Comparator comp) {
+        if (p == r)
+            return (int) a.get(p);
+        int q = randmizedPartition(a, p, r, comp);
+        int k = q - p + 1;
+        if (i == k) {
+            return (int) a.get(q);
+        } else if (i < k) {
+            return select(a, p, q - 1, i, comp);
+        } else {
+            return select(a, q + 1, r, i - k, comp);
+        }
+    }
 }
