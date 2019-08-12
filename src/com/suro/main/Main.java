@@ -13,15 +13,29 @@ import java.util.Vector;
 
 public class Main {
     public static void main(String[] args) {
-        int i;
-        Integer[] a = {5, 1, 9, 4, 6, 2, 0, 3, 8, 7};
-        ArrayList<Integer> A = new ArrayList<>();
-        for (i = 0; i < 10; i++) {
-            A.add(a[i]);
+        int[] h = {4, 1, 3, 2, 16, 9, 10, 14, 8, 7};
+        Vector<Integer> H = new Vector<>();
+        for (int i = 0; i < 10; i++) {
+            H.add(new Integer(h[i]));
         }
-        int result = LinearList.select((List) A, 0, 9, 2, new Greater());
-        System.out.println(result);
+        LinearList.buildHeap((List) H, new Greater());
+        System.out.println("max heap: ");
+        System.out.println(H);
+        LinearList.buildHeap((List) H, new Less());
+        System.out.println("min heap: ");
+        System.out.println(H);
     }
+
+//    public static void main(String[] args) {
+//        int i;
+//        Integer[] a = {5, 1, 9, 4, 6, 2, 0, 3, 8, 7};
+//        ArrayList<Integer> A = new ArrayList<>();
+//        for (i = 0; i < 10; i++) {
+//            A.add(a[i]);
+//        }
+//        int result = LinearList.select((List) A, 0, 9, 2, new Greater());
+//        System.out.println(result);
+//    }
 
 //    public static void main(String[] args) {
 //        int i;
