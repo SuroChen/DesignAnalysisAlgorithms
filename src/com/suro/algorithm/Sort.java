@@ -2,6 +2,7 @@ package com.suro.algorithm;
 
 import com.suro.utility.LinearList;
 
+import java.util.Collections;
 import java.util.Comparator;
 import java.util.List;
 
@@ -61,6 +62,16 @@ public class Sort {
             int q = LinearList.randmizedPartition(a, p, r, comp);
             quickSort(a, p, q, comp);
             quickSort(a, q + 1, r, comp);
+        }
+    }
+
+    public static void heapSort(List<Comparable> a, Comparator comp) {
+        int i, heapSize = a.size();
+        LinearList.buildHeap(a, comp);
+        for (i = heapSize - 1; i > 0; i--) {
+            Collections.swap(a, 0, i);
+            heapSize--;
+            LinearList.heapify(a, 0, heapSize, comp);
         }
     }
 }
