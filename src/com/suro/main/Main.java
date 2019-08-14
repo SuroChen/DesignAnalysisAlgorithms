@@ -1,41 +1,88 @@
 package com.suro.main;
 
 import com.suro.algorithm.Hanoi;
+import com.suro.algorithm.PrioQueue;
 import com.suro.algorithm.Sort;
 import com.suro.utility.Greater;
 import com.suro.utility.Less;
 import com.suro.utility.LinearList;
 
-import java.util.ArrayList;
-import java.util.LinkedList;
-import java.util.List;
-import java.util.Vector;
+import java.util.*;
 
 public class Main {
     public static void main(String[] args) {
         int i;
         Integer[] a = {5, 1, 9, 4, 6, 2, 0, 3, 8, 7};
-        String[] b = {"ChongQing", "ShangHai", "AoMen", "TianJin", "BeiJing", "XiangGang"};
-        Double[] c = {8.5, 6.3, 1.7, 9.2, 0.5, 2.3, 4.1, 7.4, 5.9, 3.7};
-        ArrayList<Integer> A = new ArrayList<>();
+        PriorityQueue q = new PriorityQueue(10, new Less());
+        PriorityQueue q1 = new PriorityQueue();
+
         for (i = 0; i < 10; i++) {
-            A.add(a[i]);
+            q.add(a[i]);
+            q1.add(a[i]);
         }
-        Vector<String> B = new Vector<>();
-        for (i = 0; i < 6; i++) {
-            B.add(b[i]);
+        while (!q.isEmpty()) {
+            System.out.print(q.poll() + " ");
         }
-        LinkedList<Double> C = new LinkedList<>();
-        for (i = 0; i < 10; i++) {
-            C.add(c[i]);
+        System.out.println();
+        while (!q1.isEmpty()) {
+            System.out.print(q1.poll() + " ");
         }
-        Sort.heapSort((List) A, new Greater());
-        System.out.println(A);
-        Sort.heapSort((List) B, new Less());
-        System.out.println(B);
-        Sort.heapSort((List) C, new Greater());
-        System.out.println(C);
+        System.out.println();
     }
+
+//    public static void main(String[] args) {
+//        int i;
+//        Integer[] a = {5, 1, 9, 4, 6, 2, 0, 3, 8, 7};
+//        String[] b = {"ChongQing", "ShangHai", "AoMen", "TianJin", "BeiJing", "XiangGang"};
+//        Double[] c = {8.5, 6.3, 1.7, 9.2, 0.5, 2.3, 4.1, 7.4, 5.9, 3.7};
+//        PrioQueue q = new PrioQueue();
+//        PrioQueue q1 = new PrioQueue(new Less());
+//        PrioQueue q2 = new PrioQueue(new Greater());
+//
+//        for (i = 0; i < 10; i++) {
+//            q.enQueue(a[i]);
+//            q2.enQueue(c[i]);
+//        }
+//        for (i = 0; i < 6; i++)
+//            q1.enQueue(b[i]);
+//        while (!q.empty()) {
+//            System.out.print(q.deQueue() + " ");
+//        }
+//        System.out.println();
+//        while (!q1.empty()) {
+//            System.out.print(q1.deQueue() + " ");
+//        }
+//        System.out.println();
+//        while (!q2.empty()) {
+//            System.out.print(q2.deQueue() + " ");
+//        }
+//        System.out.println();
+//    }
+
+//    public static void main(String[] args) {
+//        int i;
+//        Integer[] a = {5, 1, 9, 4, 6, 2, 0, 3, 8, 7};
+//        String[] b = {"ChongQing", "ShangHai", "AoMen", "TianJin", "BeiJing", "XiangGang"};
+//        Double[] c = {8.5, 6.3, 1.7, 9.2, 0.5, 2.3, 4.1, 7.4, 5.9, 3.7};
+//        ArrayList<Integer> A = new ArrayList<>();
+//        for (i = 0; i < 10; i++) {
+//            A.add(a[i]);
+//        }
+//        Vector<String> B = new Vector<>();
+//        for (i = 0; i < 6; i++) {
+//            B.add(b[i]);
+//        }
+//        LinkedList<Double> C = new LinkedList<>();
+//        for (i = 0; i < 10; i++) {
+//            C.add(c[i]);
+//        }
+//        Sort.heapSort((List) A, new Greater());
+//        System.out.println(A);
+//        Sort.heapSort((List) B, new Less());
+//        System.out.println(B);
+//        Sort.heapSort((List) C, new Greater());
+//        System.out.println(C);
+//    }
 
 //    public static void main(String[] args) {
 //        int[] h = {4, 1, 3, 2, 16, 9, 10, 14, 8, 7};
